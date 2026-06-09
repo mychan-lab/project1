@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "인재개발팀",
-  description: "더 나은 제품을 만들기 위해 끊임없이 고민하고 실행하는 팀입니다.",
+  description: "인재를 발굴하고 함께 성장하는 문화를 만들어가는 팀입니다.",
 };
 
 export default function RootLayout({
