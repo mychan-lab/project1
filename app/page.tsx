@@ -1,3 +1,5 @@
+import ConsultationForm from "./components/ConsultationForm";
+
 export default function Home() {
   const services = [
     {
@@ -290,6 +292,39 @@ export default function Home() {
             </details>
           ))}
         </div>
+      </section>
+
+      {/* Consultation Section */}
+      <section style={{ padding: "80px var(--space-6)", maxWidth: "760px", margin: "0 auto", width: "100%" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)", marginBottom: "var(--space-5)" }}>
+          <span style={{
+            fontSize: "var(--font-size-sm)",
+            fontWeight: 600,
+            color: "var(--color-text-alt)",
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
+          }}>
+            상담 신청
+          </span>
+          <hr className="divider" style={{ flex: 1 }} />
+        </div>
+        <h2 style={{
+          fontSize: "var(--font-size-2xl)",
+          fontWeight: 700,
+          color: "var(--color-text-base)",
+          marginBottom: "var(--space-2)",
+        }}>
+          궁금한 점이 있으신가요?
+        </h2>
+        <p style={{
+          fontSize: "var(--font-size-body)",
+          color: "var(--color-text-alt)",
+          marginBottom: "40px",
+          lineHeight: 1.7,
+        }}>
+          상담 내용을 남겨주시면 담당자가 확인 후 연락드립니다.
+        </p>
+        <ConsultationForm />
       </section>
 
       {/* Footer */}
