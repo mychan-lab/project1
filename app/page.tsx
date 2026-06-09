@@ -70,11 +70,11 @@ export default function Home() {
             </span>
           ))}
           <a
-            href="mailto:contact@team.com"
+            href="#faq"
             className="btn-primary"
             style={{ height: "32px", fontSize: "var(--font-size-body)", textDecoration: "none" }}
           >
-            문의하기
+            FAQ
           </a>
         </div>
       </nav>
@@ -116,8 +116,8 @@ export default function Home() {
           <a href="mailto:contact@team.com" className="btn-primary" style={{ height: "42px", fontSize: "15px", padding: "0 24px", textDecoration: "none" }}>
             ♥ 팔로우
           </a>
-          <a href="mailto:contact@team.com" className="btn-secondary" style={{ height: "42px", fontSize: "15px", padding: "0 24px", textDecoration: "none" }}>
-            문의하기
+          <a href="#faq" className="btn-secondary" style={{ height: "42px", fontSize: "15px", padding: "0 24px", textDecoration: "none" }}>
+            FAQ 보기
           </a>
         </div>
 
@@ -206,35 +206,90 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section style={{
-        background: `linear-gradient(135deg, var(--color-twitch-purple-dark) 0%, var(--color-twitch-purple) 100%)`,
-        padding: "64px var(--space-6)",
-        textAlign: "center",
-      }}>
-        <h2 style={{ fontSize: "var(--font-size-2xl)", fontWeight: 700, color: "#ffffff", marginBottom: "var(--space-2)" }}>
-          함께 성장하고 싶으신가요?
+      {/* FAQ Section */}
+      <section id="faq" style={{ padding: "80px var(--space-6)", maxWidth: "760px", margin: "0 auto", width: "100%" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)", marginBottom: "var(--space-5)" }}>
+          <span style={{
+            fontSize: "var(--font-size-sm)",
+            fontWeight: 600,
+            color: "var(--color-text-alt)",
+            textTransform: "uppercase",
+            letterSpacing: "0.1em",
+          }}>
+            FAQ
+          </span>
+          <hr className="divider" style={{ flex: 1 }} />
+        </div>
+
+        <h2 style={{
+          fontSize: "var(--font-size-2xl)",
+          fontWeight: 700,
+          color: "var(--color-text-base)",
+          marginBottom: "40px",
+        }}>
+          자주 묻는 질문
         </h2>
-        <p style={{ fontSize: "var(--font-size-md)", color: "rgba(255,255,255,0.8)", marginBottom: "var(--space-5)" }}>
-          언제든지 편하게 연락주세요.
-        </p>
-        <a
-          href="mailto:contact@team.com"
-          style={{
-            display: "inline-block",
-            background: "#ffffff",
-            color: "var(--color-twitch-purple-dark)",
-            fontWeight: 700,
-            fontSize: "var(--font-size-md)",
-            padding: "14px 36px",
-            borderRadius: "var(--radius-sm)",
-            textDecoration: "none",
-            boxShadow: "var(--shadow-3)",
-            transition: "transform 100ms ease",
-          }}
-        >
-          문의하기
-        </a>
+
+        <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-2)" }}>
+          {[
+            {
+              q: "채용 관련 문의는 어떻게 하나요?",
+              a: "채용 공고는 공식 채용 페이지에서 확인하실 수 있습니다. 지원서 제출 후 담당자가 검토 후 2주 이내에 연락드립니다.",
+            },
+            {
+              q: "교육 프로그램은 누구나 신청할 수 있나요?",
+              a: "전 임직원을 대상으로 운영됩니다. 직무 교육, 리더십 과정, 외부 교육 지원 등 다양한 프로그램이 있으니 사내 포털에서 신청하세요.",
+            },
+            {
+              q: "인턴십 또는 신입 채용 프로그램이 있나요?",
+              a: "상·하반기 정기 공채와 수시 채용을 진행합니다. 인턴십은 매년 상반기에 모집하며 우수 인턴은 정규직 전환 기회가 주어집니다.",
+            },
+            {
+              q: "팀 문화와 근무 환경은 어떤가요?",
+              a: "자율과 책임을 바탕으로 수평적인 소통 문화를 지향합니다. 유연 근무제와 재택 근무를 병행하며 구성원의 워라밸을 중요하게 생각합니다.",
+            },
+            {
+              q: "인재개발팀에 직접 문의하고 싶어요.",
+              a: "contact@team.com 으로 이메일을 보내주시면 근무일 기준 1~2일 이내에 답변드립니다.",
+            },
+          ].map(({ q, a }) => (
+            <details
+              key={q}
+              style={{
+                background: "var(--color-background-alt)",
+                borderRadius: "var(--radius-lg)",
+                border: "1px solid var(--color-background-input)",
+                overflow: "hidden",
+              }}
+            >
+              <summary style={{
+                padding: "var(--space-4)",
+                fontSize: "var(--font-size-body)",
+                fontWeight: 600,
+                color: "var(--color-text-base)",
+                cursor: "pointer",
+                listStyle: "none",
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
+                gap: "var(--space-3)",
+              }}>
+                {q}
+                <span style={{ color: "var(--color-twitch-purple)", flexShrink: 0, fontSize: "18px" }}>＋</span>
+              </summary>
+              <div style={{
+                padding: "0 var(--space-4) var(--space-4)",
+                fontSize: "var(--font-size-sm)",
+                color: "var(--color-text-alt)",
+                lineHeight: 1.7,
+                borderTop: "1px solid var(--color-background-input)",
+                paddingTop: "var(--space-3)",
+              }}>
+                {a}
+              </div>
+            </details>
+          ))}
+        </div>
       </section>
 
       {/* Footer */}
