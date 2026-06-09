@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(run)",
+      "Bash(timeout 30 bash *)",
+      "Bash(chromium-cli *)",
+      "Bash(gh api *)",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "Bash(curl -sf http://localhost:3000)",
+      "Bash(vercel --version)"
+    ]
+  }
+}
